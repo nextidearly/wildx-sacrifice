@@ -67,12 +67,16 @@ export default function ComingSoon() {
               <> You have ( {balance || 0} ) amount of WILDx LP on Base.</>
             ) : (
               <div className="flex flex-col items-center">
-                <PiWarningOctagon className="text-7xl" /> <p>You do not have any WILDx LP.</p>{" "}
+                <PiWarningOctagon className="text-7xl" />{" "}
+                <p>You do not have any WILDx LP.</p>{" "}
               </div>
             )}{" "}
           </>
         ) : (
-          <>Please Connect Wallet.</>
+          <div className="flex flex-col items-center">
+            <PiWarningOctagon className="text-7xl" />{" "}
+            <p>Please Connect Wallet.</p>{" "}
+          </div>
         )}
       </h1>
       <p className="text-white text-lg mb-8 text-center">
