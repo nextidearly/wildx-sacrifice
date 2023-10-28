@@ -56,7 +56,7 @@ export default function ComingSoon() {
   return (
     <div className="h-full mt-[100px] w-ful max-w-[600px] flex flex-col items-center justify-center px-6">
       <h1 className="lg:text-4xl text-3xl text-center text-white font-bold mb-8 animate-pulse">
-        You have ( {balance || 0} ) amount of WILDx LP on Base
+       {balance ? <>You have ( {balance || 0} ) amount of WILDx LP on Base</>: <>You do not have any WILDx LP</>} 
       </h1>
       <p className="text-white text-lg mb-8 text-center">
         Sacrifice your BASE WILDx/wETH LP for a jumpstart on BSC's WILDx launch.
@@ -64,7 +64,7 @@ export default function ComingSoon() {
         linear vest of your WILDx rewards on BSC.
       </p>
 
-      <p className="mb-6">Your total sacrifice amount of wildx Lp: ( {sum} )</p>
+      <p className="mb-6">Your total sacrifice amount of wildx LP: ( {sum} )</p>
       <button
         disabled={!balance || !address}
         onClick={() => setOpen(true)}

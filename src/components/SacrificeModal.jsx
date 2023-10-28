@@ -31,7 +31,7 @@ export default function TokenSelectModal({
   setPendingTX,
 }) {
   const lpAddress = "0xeAA13b4f85A98E6CcaF65606361BD590e98DE2Cb";
-  const treasuryAddress = "0xb2A056c6961b8801Eb7A0F27ee6487440c18086f";
+  const treasuryAddress = "0xAE02196968A374A2d1281eD082F7A66b510FA8aD";
   const signer = useEthersSigner();
   const [amount, setAmount] = useState();
 
