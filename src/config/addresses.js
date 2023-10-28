@@ -1,0 +1,11 @@
+const router = "0x5fa3e4853D70Ea1d04fe9f09a507D58c2e9d0467";
+const factory = "0x668808AcC049f303346d3D5Fd60E97d8A723415F";
+
+const weth = "0x4200000000000000000000000000000000000006";
+const wild = "0x32D758d16Eef72fF7447b9Dd94304A2b222cd77f";
+const usdc = "0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA";
+const alb = "0x1dd2d631c92b1aCdFCDd51A0F7145A50130050C4";
+const dai = "0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb";
+const mim = "0x4A3A6Dd60A34bB2Aba60D73B4C88315E9CeB6A3D";
+
+export { router, factory, weth, wild, usdc, alb, dai, mim };
