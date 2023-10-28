@@ -6,6 +6,7 @@ import { toReadableAmount } from "utils/customHelpers";
 import { ref, orderByChild, query, equalTo, get } from "firebase/database";
 import { db } from "config/firebase";
 import { useAccount } from "wagmi";
+import { PiWarningOctagon } from "react-icons/pi";
 
 export default function ComingSoon() {
   const lpAddress = "0xeAA13b4f85A98E6CcaF65606361BD590e98DE2Cb";
@@ -55,13 +56,19 @@ export default function ComingSoon() {
 
   return (
     <div className="h-full mt-[100px] w-ful max-w-[600px] flex flex-col items-center justify-center px-6">
-      <h1 className="lg:text-4xl text-3xl text-center text-white font-bold mb-8 animate-pulse">
+      <h1
+        className={`lg:text-4xl text-3xl text-center font-bold mb-8 animate-pulse  ${
+          !address || !balance ? "text-yellow-main" : "text-white"
+        }`}
+      >
         {address ? (
           <>
             {balance ? (
-              <>You have ( {balance || 0} ) amount of WILDx LP on Base</>
+              <> You have ( {balance || 0} ) amount of WILDx LP on Base.</>
             ) : (
-              <>You do not have any WILDx LP</>
+              <div className="flex flex-col items-center">
+                <PiWarningOctagon className="text-7xl" /> <p>You do not have any WILDx LP.</p>{" "}
+              </div>
             )}{" "}
           </>
         ) : (
