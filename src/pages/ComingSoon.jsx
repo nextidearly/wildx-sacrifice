@@ -49,14 +49,24 @@ export default function ComingSoon() {
     if (address && signer) {
       fetchBalance(address);
     } else {
-      setSum(0)
+      setSum(0);
     }
   }, [address, signer]);
 
   return (
     <div className="h-full mt-[100px] w-ful max-w-[600px] flex flex-col items-center justify-center px-6">
       <h1 className="lg:text-4xl text-3xl text-center text-white font-bold mb-8 animate-pulse">
-       {balance ? <>You have ( {balance || 0} ) amount of WILDx LP on Base</>: <>You do not have any WILDx LP</>} 
+        {address ? (
+          <>
+            {balance ? (
+              <>You have ( {balance || 0} ) amount of WILDx LP on Base</>
+            ) : (
+              <>You do not have any WILDx LP</>
+            )}{" "}
+          </>
+        ) : (
+          <>Please Connect Wallet.</>
+        )}
       </h1>
       <p className="text-white text-lg mb-8 text-center">
         Sacrifice your BASE WILDx/wETH LP for a jumpstart on BSC's WILDx launch.
