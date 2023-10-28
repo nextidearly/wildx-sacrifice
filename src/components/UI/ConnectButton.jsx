@@ -59,28 +59,6 @@ export const WalletConnect = () => {
               }
               return (
                 <div className="flex items-center">
-                  <img
-                    src="/logo.png"
-                    alt="logo"
-                    className="w-[25px] h-[25px] mx-1"
-                  />
-                  <p className="hidden sm:flex items-center balance">
-                    {Number(priceData[0]) ? `~ ${priceData[0]?.toString()}` : ""}
-                  </p>
-                  <button
-                    onClick={openChainModal}
-                    className="hidden sm:inline-flex justify-center items-center hover:bg-hover bg-orange rounded-full  transition ease-in-out text-black text-xl"
-                  >
-                    {chain.iconUrl ? (
-                      <img
-                        alt={chain.name ?? "Chain icon"}
-                        src={chain.iconUrl}
-                        className="h-[40px] w-[40px!important]"
-                      />
-                    ) : (
-                      <>?</>
-                    )}
-                  </button>
                   <button
                     onClick={openAccountModal}
                     className="bt-yellow-main btn_connect m-2 sm:m-0 hover:bg-hover bg-orange transition ease-in-out flex justify-center items-center gap-1"

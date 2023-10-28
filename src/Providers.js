@@ -6,23 +6,19 @@ import {
   darkTheme,
 } from "@rainbow-me/rainbowkit";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { base, bsc } from "wagmi/chains";
+import { base } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
-import { Provider } from "react-redux";
-import { HelmetProvider } from "react-helmet-async";
-import { RefreshContextProvider } from "context/RefreshContext";
 import ContractContextProvideer from "context/contracts";
 import { ThemeContextProvider } from "context/ThemeContext";
 import { LanguageProvider } from "context/Localization";
 import { ModalProvider } from "uikit";
 
 import { ALCHEMY_ID } from "config";
-import store from "state";
 
 const Providers = ({ children }) => {
   const { chains, publicClient } = configureChains(
-    [bsc, base],
+    [base],
     [alchemyProvider({ apiKey: ALCHEMY_ID }), publicProvider()]
   );
 
@@ -40,20 +36,14 @@ const Providers = ({ children }) => {
   return (
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider chains={chains} theme={darkTheme()}>
-        <Provider store={store}>
-          <HelmetProvider>
-            <ThemeContextProvider>
-              <LanguageProvider>
-                <RefreshContextProvider>
-                  <ContractContextProvideer>
-                    <ModalProvider>{children}</ModalProvider>
-                  </ContractContextProvideer>
-                </RefreshContextProvider>
-              </LanguageProvider>
-            </ThemeContextProvider>
-          </HelmetProvider>
-          <ToastContainer />
-        </Provider>
+        <ThemeContextProvider>
+          <LanguageProvider>
+            <ContractContextProvideer>
+              <ModalProvider>{children}</ModalProvider>
+            </ContractContextProvideer>
+          </LanguageProvider>
+        </ThemeContextProvider>
+        <ToastContainer />
       </RainbowKitProvider>
     </WagmiConfig>
   );

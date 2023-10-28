@@ -13,26 +13,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <ComingSoon />,
   },
-  {
-    path: "/farms",
-    element: <Farms />,
-  },
-  {
-    path: "/swap",
-    element: <Swap />,
-  },
-  {
-    path: "/farms",
-    element: <Farms />,
-  },
-  {
-    path: "/liquidity",
-    element: <Liquidity />,
-  },
-  {
-    path: "*",
-    element: <NotFound />,
-  },
 ]);
 
 export default router;
