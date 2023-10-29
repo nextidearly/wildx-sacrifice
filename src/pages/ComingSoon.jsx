@@ -34,7 +34,7 @@ export default function ComingSoon() {
       const exist = snapshot.val();
       if (exist) {
         Object.keys(exist).map((key) => {
-          setSum((i) => i + exist[key].amount);
+          setSum((i) => Number(i) + Number(exist[key].amount));
         });
       }
     });

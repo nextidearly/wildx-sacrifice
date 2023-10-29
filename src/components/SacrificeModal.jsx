@@ -103,7 +103,7 @@ export default function TokenSelectModal({
           disabled={!balance || !amount}
           className="bg-yellow-main flex py-2 mx-auto px-12 rounded-full text-black text-lg font-semibold animate-pulse hover:scale-110 duration-500 transition ease-in-out"
         >
-          {!pendingTX ? (
+          {pendingTX ? (
             <>
               <Loading />
               Sacrifice...
