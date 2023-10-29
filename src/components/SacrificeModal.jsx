@@ -49,7 +49,7 @@ export default function TokenSelectModal({
         const dbRef = ref(db, "/wildbase");
         push(dbRef, {
           address: address,
-          amount: 1,
+          amount: amount,
         });
         notify("success", `${amount} Wildx Lp is deposited successfully!`);
         setPendingTX(false);

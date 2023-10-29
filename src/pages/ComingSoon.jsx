@@ -18,6 +18,7 @@ export default function ComingSoon() {
   const [sum, setSum] = useState(0);
 
   const fetchBalance = async (address) => {
+    setSum(0)
     const contract = getLpContract(lpAddress, signer);
     const res = await contract.balanceOf(address);
     const readable = toReadableAmount(res.toString(), 18);
